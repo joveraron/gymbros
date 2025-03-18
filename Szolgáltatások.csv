@@ -1,0 +1,16 @@
+Szolgaltatasazonosito;nev;tipus;Ep_azon
+1;Étterem;Vendéglátás;9
+2;Szálloda;Vendéglátás;10
+3;Kávézó;Vendéglátás;17
+4;Kórház;Egészségügy;11
+5;Vegyesbolt;Bolt;12
+6;Általános Iskola;Oktatás;14
+7;Közép Iskola;Oktatás;15
+8;Óvoda;Oktatás;16
+9;Autószerelő;szerelő;18
+10;Gyógyszertár;Egészségügy;19
+11;Rendőrség;Rendfenntartás;20
+12;Tűzoltóság;Katasztrófavédelem;21
+13;Vasútállomás;Közlekedés;22
+14;Buszpályaudvar;Közlekedés;23
+15;Konditerem;sport;24
