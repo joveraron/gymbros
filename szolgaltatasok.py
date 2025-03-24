@@ -1,4 +1,4 @@
-class Lakos:
+class Szolgaltatas:
     def __init__(self, azon, nev, tipus, Ep_azon):
         self.azon = int(azon)
         self.nev = nev
@@ -9,10 +9,13 @@ class Lakos:
         return f"{self.azon}: {self.nev}, {self.tipus}, {self.Ep_azon}"
 
 # Adatok beolvasása fájlból
-with open(r"C:\Users\Domc\Desktop\infó\verseny\2025.03\Szolgáltatások.csv", "r", encoding="utf8") as file:
-    fejlec = file.readline().strip().split(";")  # Az első sor (oszlopnevek)
-    szolgaltatasok = [Lakos(*sor.strip().split(";")) for sor in file]
+szolgaltatasok_fajl = open(r"Szolgáltatások.csv", "r", encoding="utf8")
 
-# Ellenőrzés: kiírunk néhány sort
-for lakos in szolgaltatasok[:5]:
-    print(lakos)
+fejlec = szolgaltatasok_fajl.readline().strip().split(";")  # Az első sor (oszlopnevek)
+szolgaltatasok = []
+
+for sor in szolgaltatasok_fajl:
+    szolgaltatasok.append(Szolgaltatas(*(sor.strip().split(";"))))
+
+'''for szolgaltatas in szolgaltatasok:
+    print(szolgaltatas.azon)'''
