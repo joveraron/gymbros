@@ -26,5 +26,18 @@ print(epuletek.epuletek[24].nev)
 
 '''alma = .Epulet(int(input('Adja meg az szolgáltatás azonosítóját: ')), input('Adja meg az szolgáltatás nevét: '), input('Adja meg az szolgáltatás típusát: '), int(input('adja meg az épület azonosítóját, amelyben a szolgáltatás található: ')))'''
 alma = szolgaltatasok.Szolgaltatas(int(1), 'alma', 'banán', int(1980))
+z = open("Szolgáltatások.csv", "a", encoding="utf8")
+z.write(f"{alma.azon};{alma.nev};{alma.tipus};{alma.Ep_azon}\n")
 '''
 epuletek.epuletek.append(epuletek.Epulet(*(alma.strip().split(";"))))'''
+
+'''def main():
+    '''
+
+
+
+
+
+
+
+
