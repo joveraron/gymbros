@@ -12,17 +12,31 @@ class Projekt:
 class Ido:
     def __init__(self, ev, honap, nap):
         self.ev = int(ev)
-        self.honap = int (honap)
+        self.honap = int(honap)
         self.nap = int(nap)
 
 # Adatok beolvasása fájlból
-projekt_fajl = open(r"Projekt.csv", "r", encoding="utf8")
+projekt_fajl = open(r"Projektek.csv", "r", encoding="utf8")
 
-fejlec = projekt_fajl.readline().strip().split(";")  # Az első sor (oszlopnevek)
 projektek = []
+kezdoevek = []
+befevek = []
+meddigtart = []
 
 for sor in projekt_fajl:
     projektek.append(Projekt(*(sor.strip().split(";"))))
     
 for projekt in projektek:
-    Ido(*((projekt.kezdodatum).strip().split(".")))
+    kezdoevek.append(Ido(*((projekt.kezdodatum).strip().split("."))))
+    befevek.append(Ido(*((projekt.befejezodatum).strip().split("."))))
+
+i = 0
+
+for projekt in projektek:
+    if kezdoevek[i].ev < befevek[i].ev:
+        alma = 12 - kezdoevek[i].honap + befevek[i].honap
+        meddigtart.append(alma)
+    else:
+        alma = befevek[i].honap - kezdoevek[i].honap
+        meddigtart.append(alma)
+    i += 1
