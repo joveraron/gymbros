@@ -1,3 +1,11 @@
+def epites():
+    f = open("Épületek.csv", "a", encoding="utf8")
+    alma = epuletek.Epulet(int(input('Adja meg az épület azonosítóját: ')), input('Adja meg az épület nevét: '), input('Adja meg az épület típusát: '), int(input('adja meg az építés évét: ')), int(input('Adja meg az épület hasznos területét: ')))
+    f.write(f"{alma.azon};{alma.nev};{alma.tipus};{alma.epiteseve};{alma.hasznosterulet}\n")
+    epuletek.epuletek.append(alma)
+        
+    
+    
 class Epulet:
     def __init__(self, azon, nev, tipus, epiteseve, hasznosterulet):
         self.azon = int(azon)
@@ -18,5 +26,5 @@ epuletek = []
 for sor in epuletek_fajl:
     epuletek.append(Epulet(*(sor.strip().split(";"))))
 
-'''for epulet in epuletek:
-    print(epulet.azon)'''
+for epulet in epuletek:
+    print(epulet.azon)
