@@ -1,3 +1,12 @@
+def ujprojekt(nev, terulet, jelen):
+    legnagyobbid = 0
+    for projekt in projektek:
+        if legnagyobbid < projekt.azon:
+            legnagyobbid = projekt.azon
+    projekt = Projekt(legnagyobbid + 1, nev + " építése", terulet*400000, jelen, jelen)
+    projektek.append(projekt)
+    
+
 class Projekt:
     def __init__(self, azon, nev, koltseg, kezdodatum, befejezodatum):
         self.azon = int(azon)
